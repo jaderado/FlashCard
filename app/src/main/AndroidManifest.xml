@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.examples.owner.flashcards" >
-<uses-permission android:name="android.permission.INTERNET">
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-</uses-permission>
+    package="com.examples.owner.flashcards">
+
+    <uses-permission android:name="android.permission.INTERNET">
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    </uses-permission>
     <application
 
         android:allowBackup="true"
         android:icon="@drawable/drawing"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
 
-    <meta-data
-        android:name="com.parse.APPLICATION_ID"
-        android:value="DNjVXTHdNHUtaXHQ4MAo61DbXVwakHJ6tvm0KDeo" />
-    <meta-data
-        android:name="com.parse.CLIENT_KEY"
-        android:value="Z6uMhpNyqgyJ86zcRMvqHP6q1bhQC3VYtgTuGRPg" />
+        <meta-data
+            android:name="com.parse.APPLICATION_ID"
+            android:value="l267bi83DE38uur76wC7rqZwRDFUQDhKVgJXu7P7" />
+        <meta-data
+            android:name="com.parse.CLIENT_KEY"
+            android:value="hnvfX09IXjyA3i6QOTFJHhjkxxwaUbyAZzVeYREA" />
 
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -33,23 +34,21 @@
             android:label="LoginActivity">
 
             <intent-filter>
-                <action android:name="com.example.owner.LoginActivity"/>
-                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="com.example.owner.LoginActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
 
             </intent-filter>
-            </activity>
+        </activity>
         <activity
             android:name=".RegisterActivity"
             android:label="RegisterActivity">
             <intent-filter>
-                <action android:name="com.example.owner.RegisterActivity"/>
+                <action android:name="com.example.owner.RegisterActivity" />
 
             </intent-filter>
 
 
-
-
-            </activity>
+        </activity>
     </application>
 
 </manifest>

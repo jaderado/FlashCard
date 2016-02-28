@@ -24,6 +24,21 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         Parse.enableLocalDatastore(this);
         Parse.initialize(this);
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("TestObject");
+        query.whereEqualTo("foo", "Arturo");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> scoreList, ParseException e) {
+                if (e == null) {
+                    for (int i = 0; i < scoreList.size(); i++)
+                        Log.e("Number that Arturo cont", "Here are the numbers of Arturo " +
+                                scoreList.get(i).get("Numbers").toString());
+                    Log.e("score", "Retrieved " + scoreList.size() + " Numbers of Arturo");
+                } else {
+                    Log.e("score", "Error: " + e.getMessage());
+                }
+            }
+        });
     }
 
      public void startAct(View view){
@@ -32,20 +47,7 @@ public class MainActivity extends Activity {
 //         testObject.saveInBackground();
 //         startActivity(new Intent(this, LoginActivity.class));
 
-         ParseQuery<ParseObject> query = ParseQuery.getQuery("TestObject");
-         query.whereEqualTo("foo", "Arturo");
-         query.findInBackground(new FindCallback<ParseObject>() {
-             public void done(List<ParseObject> scoreList, ParseException e) {
-                 if (e == null) {
-                     for(int i = 0;i<scoreList.size();i++)
-                         Log.e("Number that Arturo cont", "Here are the numbers of Arturo " +
-                                 scoreList.get(i).get("Numbers").toString());
-                     Log.e("score", "Retrieved " + scoreList.size() + " Numbers of Arturo");
-                 } else {
-                     Log.e("score", "Error: " + e.getMessage());
-                 }
-             }
-         });
+
      }
 
 
